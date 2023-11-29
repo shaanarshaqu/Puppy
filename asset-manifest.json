@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/Puppy/static/css/main.6ae2e3f5.css",
+    "main.js": "/Puppy/static/js/main.714664e4.js",
+    "static/js/787.ac4c4ce8.chunk.js": "/Puppy/static/js/787.ac4c4ce8.chunk.js",
+    "static/media/mouse.png": "/Puppy/static/media/mouse.67bb578e06a2c098f336.png",
+    "static/media/bird.png": "/Puppy/static/media/bird.68c5ea8c1dcad18d7564.png",
+    "static/media/fish.png": "/Puppy/static/media/fish.f38f8ed50ca1b6dcde08.png",
+    "static/media/cat.png": "/Puppy/static/media/cat.ee371ac773f74e25182d.png",
+    "static/media/Dog.png": "/Puppy/static/media/Dog.580ee28fd12b5c11966f.png",
+    "static/media/reptile.png": "/Puppy/static/media/reptile.7f95f1bc73b5e280b060.png",
+    "static/media/fa-solid-900.ttf": "/Puppy/static/media/fa-solid-900.d75e3fd1eb12e9bd6655.ttf",
+    "static/media/Carosal3.jpg": "/Puppy/static/media/Carosal3.944e786f1e62abd98c4a.jpg",
+    "static/media/puppy.png": "/Puppy/static/media/puppy.9bcbe21072536591c31f.png",
+    "static/media/Carosal2.jpg": "/Puppy/static/media/Carosal2.ddfb1a6b0bd24d6c3264.jpg",
+    "static/media/fa-brands-400.ttf": "/Puppy/static/media/fa-brands-400.016b4a6cdced82ab3aa1.ttf",
+    "static/media/Carosal1.jpg": "/Puppy/static/media/Carosal1.a3fdc13d1af6f76fe649.jpg",
+    "static/media/fa-solid-900.woff2": "/Puppy/static/media/fa-solid-900.b6879d41b0852f01ed5b.woff2",
+    "static/media/kitty.png": "/Puppy/static/media/kitty.56dbe90bc4361c481292.png",
+    "static/media/fa-brands-400.woff2": "/Puppy/static/media/fa-brands-400.878f31251d960bd6266f.woff2",
+    "static/media/fa-regular-400.ttf": "/Puppy/static/media/fa-regular-400.50701fbb8177c2dde530.ttf",
+    "static/media/fa-regular-400.woff2": "/Puppy/static/media/fa-regular-400.b041b1fa4fe241b23445.woff2",
+    "static/media/fa-v4compatibility.ttf": "/Puppy/static/media/fa-v4compatibility.c6a0c95b0a95c4553700.ttf",
+    "static/media/fa-v4compatibility.woff2": "/Puppy/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
+    "index.html": "/Puppy/index.html",
+    "main.6ae2e3f5.css.map": "/Puppy/static/css/main.6ae2e3f5.css.map",
+    "main.714664e4.js.map": "/Puppy/static/js/main.714664e4.js.map",
+    "787.ac4c4ce8.chunk.js.map": "/Puppy/static/js/787.ac4c4ce8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ae2e3f5.css",
+    "static/js/main.714664e4.js"
+  ]
+}
