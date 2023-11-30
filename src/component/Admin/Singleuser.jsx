@@ -52,8 +52,9 @@ function Singleuser() {
                 <div className="single-img-div">
                   <img
                     src={currentuser.image}
+                    className="img-fluid"
                     alt="user-profile"
-                    style={{ height: "120px" }}
+                    style={{ height: "120px" ,borderRadius:"50%"}}
                   />
                 </div>
               </div>
