@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Puppy/static/css/main.6ae2e3f5.css",
-    "main.js": "/Puppy/static/js/main.797b9e12.js",
+    "main.js": "/Puppy/static/js/main.74d20b85.js",
     "static/js/787.ac4c4ce8.chunk.js": "/Puppy/static/js/787.ac4c4ce8.chunk.js",
     "static/media/mouse.png": "/Puppy/static/media/mouse.67bb578e06a2c098f336.png",
     "static/media/bird.png": "/Puppy/static/media/bird.68c5ea8c1dcad18d7564.png",
@@ -24,11 +24,11 @@
     "static/media/fa-v4compatibility.woff2": "/Puppy/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
     "index.html": "/Puppy/index.html",
     "main.6ae2e3f5.css.map": "/Puppy/static/css/main.6ae2e3f5.css.map",
-    "main.797b9e12.js.map": "/Puppy/static/js/main.797b9e12.js.map",
+    "main.74d20b85.js.map": "/Puppy/static/js/main.74d20b85.js.map",
     "787.ac4c4ce8.chunk.js.map": "/Puppy/static/js/787.ac4c4ce8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6ae2e3f5.css",
-    "static/js/main.797b9e12.js"
+    "static/js/main.74d20b85.js"
   ]
 }
