@@ -25,7 +25,6 @@ function Cart({ cart,setTotal,total }) {
       setDisplaycart(false)
     }
   }, [cart]);
-  console.log(cart);
 
   function removeFromcart(index){
     

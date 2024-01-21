@@ -20,11 +20,10 @@ function reducer(stat, action) {
 function Products() {
   const { state, setState,adminlogin } = useContext(newContext);
   const [ctgory, dispatch] = useReducer(reducer, { ctg: "cat" });
-  useEffect(()=>{console.log(state)},[state])
   const navigate = useNavigate()
 
   return (
-    <div style={{ marginTop: "70px" ,paddingBottom:"20px",paddingTop:"20px",backgroundColor:"lightblue"}}>
+    <div style={{ marginTop: "70px" ,paddingBottom:"20px",paddingTop:"20px",backgroundColor:"lightblue", minHeight:"100vh"}}>
       {adminlogin?<><div className="container">
         <div className="d-flex" style={{justifyContent:"flex-end"}}>
           <DropdownButton

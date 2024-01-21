@@ -28,7 +28,7 @@ const Cat = () => {
         <div className="row card-row">
           {catfoodmap.map((val) => (
             <div className="col-6 col-sm-4 col-md-3 col-lg-2 my-2">
-              <Link to={`/${val.id}`} style={{textDecoration:"none"}}>
+              <Link to={`/cat/${val.id}`} style={{textDecoration:"none"}}>
                 <Card style={{ height: "340px" , overflow:"hidden"}} key={val.id}>
                   <Card.Img
                     variant="top"
@@ -51,7 +51,7 @@ const Cat = () => {
         <div className="row card-row">
           {catcaremap.map((val) => (
             <div className="col-6 col-sm-4 col-md-3 col-lg-2 my-2">
-              <Link to={`/${val.id}`} style={{textDecoration:"none"}}>
+              <Link to={`/cat/${val.id}`} style={{textDecoration:"none"}}>
                 <Card style={{ height: "340px" }} key={val.id}>
                   <Card.Img
                     variant="top"

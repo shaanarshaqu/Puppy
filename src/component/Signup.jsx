@@ -4,6 +4,8 @@ import { Button } from "react-bootstrap";
 import userlogo from "./images/userlogo.png";
 import { Container, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
+
 
 function Signup({ validate }) {
   const [mail, setemail] = useState("");
@@ -35,7 +37,8 @@ function Signup({ validate }) {
               to={"/login"}
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <i className="fa-solid fa-arrow-left"></i>
+              <IoIosArrowBack style={{fontSize:"1.2em"}}/>
+
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle />

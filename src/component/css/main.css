@@ -55,6 +55,47 @@
     transform: scale(1.04);
 }
 
-/* @media screen and (max-width:576) {
-    .images-carousal
-} */
+.right-btns{
+    position:absolute;
+    right:60px;
+    top:56px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.left-btns{
+    position:absolute;
+    left:60px;
+    top:56px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+@media screen and (max-width:380px) {
+    #one,#two,#three,#four,#five,#six,#seven,#eight{
+        height: 60px;
+        width: 60px;
+    }
+    .images-carousal{
+        height: 150px;
+    }
+    .right-btns,.left-btns{
+        top: 45px;
+    }
+    .right-btns{
+        right: 0;
+    }
+    .left-btns{
+        left:0;
+    }
+    
+}
+
+.Main-scroll-container::-webkit-scrollbar {
+    width: 0;
+  }

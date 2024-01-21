@@ -67,7 +67,6 @@ function Seperate({ state }) {
       navigate("/login")
     }
   }
-  console.log(cart);
 
   return (
     <>

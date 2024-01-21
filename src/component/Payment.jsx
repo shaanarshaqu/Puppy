@@ -23,7 +23,6 @@ function Payment({ usermail, total }) {
     setUser(dummyusers)
     setModalShow(true)
   }
-console.log(users)
 
   return (
     <div className="container paymentsection">

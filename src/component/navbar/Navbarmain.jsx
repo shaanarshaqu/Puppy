@@ -11,6 +11,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Badge from "react-bootstrap/Badge";
 import { IoLogOut } from "react-icons/io5";
+import { FaBars } from 'react-icons/fa';
+
 
 function Navbarmain({
   state,
@@ -24,7 +26,7 @@ function Navbarmain({
   cart,
   addtoCart,
   setdisplaylogin,
-  setShow
+  setShow,
 }) {
   const navigate = useNavigate();
 
@@ -52,14 +54,19 @@ function Navbarmain({
 
   return (
     <div>
-      <Navbar expand="md" className="d-flex align-item-center" id="navbar">
+      <Navbar expand='md' className="d-flex align-item-center" id="navbar">
         <Container>
           <Navbar.Brand>
-            <h3>
-              Pu<span style={{ color: "orange" }}>pp</span>y
-            </h3>
+            <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
+              <h3>
+                Pu<span style={{ color: "orange" }}>pp</span>y
+              </h3>
+            </Link>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls={"offcanvasNavbar-expand-md"} />
+          <Navbar.Toggle aria-controls={"offcanvasNavbar-expand-md"} >
+            <FaBars />
+          </Navbar.Toggle>
+
           <Navbar.Offcanvas
             id={"offcanvasNavbar-expand-md"}
             aria-labelledby={"offcanvasNavbarLabel-expand-md"}
@@ -68,21 +75,13 @@ function Navbarmain({
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={"offcanvasNavbarLabel-expand-md"}>
-                Offcanvas
+                Menu
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className="input-nav">
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 {displaybool ? (
                   <>
-                    <Nav.Link>
-                      <Link
-                        to={"/"}
-                        style={{ textDecoration: "none", color: "inherit" }}
-                      >
-                        Home
-                      </Link>
-                    </Nav.Link>
                     <Nav.Link style={{ position: "relative" }}>
                       <Link
                         to={"/cart"}
@@ -95,7 +94,7 @@ function Navbarmain({
                             position: "absolute",
                             left: "22px",
                             top: "3px",
-                            borderRadius: "50%"
+                            borderRadius: "50%",
                           }}
                         >
                           {cart.length}
@@ -148,8 +147,13 @@ function Navbarmain({
                     >
                       <img
                         src={usermail.image}
-                        style={{ width: "30px", height:"30px",borderRadius: "50%" }}
-                        className="img-fluid" onClick={()=>setShow(true)}
+                        style={{
+                          width: "30px",
+                          height: "30px",
+                          borderRadius: "50%",
+                        }}
+                        className="img-fluid"
+                        onClick={() => setShow(true)}
                       />
                     </span>
                     <Button

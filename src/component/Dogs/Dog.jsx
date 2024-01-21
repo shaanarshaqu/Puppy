@@ -29,7 +29,7 @@ const Dog = () => {
         <div className="row card-row">
           {foodmap.map((val, index) => (
             <div className="col-6 col-sm-4 col-md-3 col-lg-2 my-2">
-              <Link to={`/${val.id}`} style={{textDecoration:"none"}}>
+              <Link to={`/dog/${val.id}`} style={{textDecoration:"none"}}>
                 <Card style={{ height: "370px" }} key={val.id}>
                   <Card.Img
                     variant="top"
@@ -52,7 +52,7 @@ const Dog = () => {
         <div className="row card-row">
           {caremap.map((val, index) => (
             <div className="col-6 col-sm-4 col-md-3 col-lg-2 my-2">
-              <Link to={`/${val.id}`} style={{textDecoration:"none"}}>
+              <Link to={`/dog/${val.id}`} style={{textDecoration:"none"}}>
                 <Card style={{ height: "370px" }} key={val.id}>
                   <Card.Img
                     variant="top"

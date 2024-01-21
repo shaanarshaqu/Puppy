@@ -11,7 +11,6 @@ import {
 } from "./component/Validate";
 import Navbarmain from "./component/navbar/Navbarmain";
 import Main from "./component/Main";
-import { useReducer } from "react";
 import { items } from "./component/Items";
 import Dog from "./component/Dogs/Dog";
 import Cat from "./component/Cats/Cat";
@@ -28,6 +27,8 @@ import Singleuser from "./component/Admin/Singleuser";
 import Addproduct from "./component/Admin/Addproduct";
 import Editproduct from "./component/Admin/Editproduct";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { Notfound } from "./Notfound";
+import { MyComponent } from "./component/footer/Footer";
 
 export const newContext = createContext();
 
@@ -59,7 +60,6 @@ function App() {
       previlage: "user",
     },
   ]);
-console.log(users)
   const [adminlogin, setAdminlogin] = useState(false);
   const [inpemail, setemail] = useState("");
   const [inppass, setPass] = useState("");
@@ -125,14 +125,13 @@ console.log(users)
       navigate("/");
     } else {
       alert("Incorrect Email or Password");
-      console.log("podey...");
     }
   };
 
   const validate = (signmail, signpass, signconfpass, selectedImage) => {
     let check = users.find((val) => val.mail === signmail);
     if (check) {
-      alert("user is already exist..");
+      alert("user is already exist...");
     }
     if (!check) {
       if (
@@ -200,7 +199,9 @@ console.log(users)
           <Route path="/signup" element={<Signup validate={validate} />} />
           <Route path="/" element={<Main />} />
           <Route path="/dog" element={<Dog />} />
+            <Route path="/dog/:seperate" element={<Seperate state={state} />} />
           <Route path="/cat" element={<Cat />} />
+            <Route path="/cat/:seperate" element={<Seperate state={state} />} />
           <Route
             path="/cart"
             element={<Cart cart={cart} setTotal={setTotal} total={total} />}
@@ -212,17 +213,18 @@ console.log(users)
 
           <Route path="/adminmain" element={<AdminMain />} />
           <Route path="/users" element={<Users users={users} />} />
-          <Route path="/users/:id" element={<Singleuser />} />
+            <Route path="/users/:id" element={<Singleuser />} />
 
           <Route path="/products" element={<Products state={state} />} />
-          <Route path="/products/:id" element={<Editproduct />} />
-
-          <Route path="/products/addproducts" element={<Addproduct />} />
-
+            <Route path="/products/:id" element={<Editproduct />} />
+            <Route path="/products/addproducts" element={<Addproduct />} />
           <Route path="/search" element={<Search search={search} />} />
-          <Route path=":seperate" element={<Seperate state={state} />} />
+          <Route path="*" element={<Notfound/>}/>
         </Routes>
       </newContext.Provider>
+
+      <MyComponent/>
+
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>

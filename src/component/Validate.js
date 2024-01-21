@@ -1,7 +1,6 @@
 // export const setLogin = () => {
 //     users.map((element)=>{
 //       if(inpemail === element.mail && inppass === element.pass){
-//         console.log("kerikko")
 //       }
 //     })
 //   };
