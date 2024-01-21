@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Puppy/static/css/main.31338fd8.css",
-    "main.js": "/Puppy/static/js/main.b05b1306.js",
+    "main.css": "/Puppy/static/css/main.2c1ef44f.css",
+    "main.js": "/Puppy/static/js/main.50dac1af.js",
     "static/js/787.ac4c4ce8.chunk.js": "/Puppy/static/js/787.ac4c4ce8.chunk.js",
     "static/media/mouse.png": "/Puppy/static/media/mouse.67bb578e06a2c098f336.png",
     "static/media/bird.png": "/Puppy/static/media/bird.68c5ea8c1dcad18d7564.png",
@@ -20,12 +20,12 @@
     "static/media/fa-v4compatibility.ttf": "/Puppy/static/media/fa-v4compatibility.c6a0c95b0a95c4553700.ttf",
     "static/media/fa-v4compatibility.woff2": "/Puppy/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
     "index.html": "/Puppy/index.html",
-    "main.31338fd8.css.map": "/Puppy/static/css/main.31338fd8.css.map",
-    "main.b05b1306.js.map": "/Puppy/static/js/main.b05b1306.js.map",
+    "main.2c1ef44f.css.map": "/Puppy/static/css/main.2c1ef44f.css.map",
+    "main.50dac1af.js.map": "/Puppy/static/js/main.50dac1af.js.map",
     "787.ac4c4ce8.chunk.js.map": "/Puppy/static/js/787.ac4c4ce8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31338fd8.css",
-    "static/js/main.b05b1306.js"
+    "static/css/main.2c1ef44f.css",
+    "static/js/main.50dac1af.js"
   ]
 }
