@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Puppy/static/css/main.f6e2fd07.css",
+    "main.css": "/Puppy/static/css/main.ad0776d9.css",
     "main.js": "/Puppy/static/js/main.b22df867.js",
     "static/js/787.ac4c4ce8.chunk.js": "/Puppy/static/js/787.ac4c4ce8.chunk.js",
     "static/media/mouse.png": "/Puppy/static/media/mouse.67bb578e06a2c098f336.png",
@@ -20,12 +20,12 @@
     "static/media/fa-v4compatibility.ttf": "/Puppy/static/media/fa-v4compatibility.c6a0c95b0a95c4553700.ttf",
     "static/media/fa-v4compatibility.woff2": "/Puppy/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
     "index.html": "/Puppy/index.html",
-    "main.f6e2fd07.css.map": "/Puppy/static/css/main.f6e2fd07.css.map",
+    "main.ad0776d9.css.map": "/Puppy/static/css/main.ad0776d9.css.map",
     "main.b22df867.js.map": "/Puppy/static/js/main.b22df867.js.map",
     "787.ac4c4ce8.chunk.js.map": "/Puppy/static/js/787.ac4c4ce8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6e2fd07.css",
+    "static/css/main.ad0776d9.css",
     "static/js/main.b22df867.js"
   ]
 }
