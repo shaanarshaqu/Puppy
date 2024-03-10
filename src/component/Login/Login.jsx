@@ -1,16 +1,22 @@
 import React, { useContext, useEffect, useRef } from "react";
-import { newContext } from "../App";
-import "./css/login.css";
+import { newContext } from "../../App";
+import "../css/login.css";
 import { Button } from "react-bootstrap";
-import userlogo from "./images/userlogo.png";
+import userlogo from "../images/userlogo.png";
 import {Container,Navbar} from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 function Login({ setLogin }) {
   const { setemail, setPass,setDisplaybool } = useContext(newContext);
+  const navigate = useNavigate()
   const inputrefpass = useRef()
   useEffect(()=>{
     setDisplaybool(false)
+    let token = Cookies.get("tk");
+    if(token){
+      navigate("/")
+    }
   },[])
   
   return (

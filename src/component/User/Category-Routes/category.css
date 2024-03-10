@@ -2,14 +2,14 @@
     justify-content: center;
     
 }
-.dog-section{
+.category-section{
     margin-top: 80px;
     overflow: hidden;
     margin-bottom: 10px;
 }
-.dog-section Button{
+/* .category-section Button{
     background-color: rgba(255, 166, 0, 0.726);
-}
-.h5-dog{
+} */
+.h5-category{
     color: darkorange;
 }

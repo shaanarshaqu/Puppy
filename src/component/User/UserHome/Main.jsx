@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import "./css/main.css";
+import "../../css/main.css";
 import { Link } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 // import { Image } from "react-bootstrap";
-import { newContext } from "../App";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { newContext } from "../../../App";
+import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 import { Button } from "react-bootstrap";
 
 function Main() {
@@ -94,11 +94,10 @@ function Main() {
         </div>
       </div>*/}
 
-      <div style={{ position: "relative" ,width:"100%"}}>
-        <Button variant="dark" className="left-btns">
-          <FaArrowLeft />
-        </Button>
-
+      <div style={{ position: "relative", width: "100%" }}>
+        <a href="#one" style={{ textDecoration: "none", color: "inherit" }}>
+          <FaArrowCircleLeft className="left-btns" />
+        </a>
         <div
           className="container Main-scroll-container d-flex"
           style={{ overflow: "auto" }}
@@ -116,33 +115,45 @@ function Main() {
             <small>Cat</small>
           </div>
           <div className="col-3 col-md-2 divisions">
-            <div className="img-div img-fluid" id="three"></div>
+            <Link to={"/puppy"}>
+              <div className="img-div img-fluid" id="three"></div>
+            </Link>
             <small>Puppy</small>
           </div>
           <div className="col-3 col-md-2 divisions">
-            <div className="img-div img-fluid" id="four"></div>
+            <Link to={"/kitten"}>
+              <div className="img-div img-fluid" id="four"></div>
+            </Link>
             <small>Kitten</small>
           </div>
           <div className="col-3 col-md-2 divisions">
-            <div className="img-div img-fluid" id="five"></div>
+            <Link to={"/birds"}>
+              <div className="img-div img-fluid" id="five"></div>
+            </Link>
             <small>Birds</small>
           </div>
           <div className="col-3 col-md-2 divisions">
-            <div className="img-div img-fluid" id="six"></div>
+            <Link to={"/reptiles"}>
+              <div className="img-div img-fluid" id="six"></div>
+            </Link>
             <small>Reptiles</small>
           </div>
           <div className="col-3 col-md-2 divisions">
-            <div className="img-div img-fluid" id="seven"></div>
+            <Link to={"/small_animals"}>
+              <div className="img-div img-fluid" id="seven"></div>
+            </Link>
             <small>Small Animals</small>
           </div>
           <div className="col-3 col-md-2 divisions">
-            <div className="img-div img-fluid" id="eight"></div>
+            <Link to={"/fish"}>
+              <div className="img-div img-fluid" id="eight"></div>
+            </Link>
             <small>Fish</small>
           </div>
         </div>
-        <Button variant="dark" className="right-btns">
-          <FaArrowRight />
-        </Button>
+        <a href="#eight" style={{ textDecoration: "none", color: "inherit" }}>
+          <FaArrowCircleRight className="right-btns" />
+        </a>
       </div>
     </div>
   );

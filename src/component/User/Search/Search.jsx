@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { newContext } from "../App";
+import { newContext } from "../../../App";
 
 function Search({ search }) {
   return (

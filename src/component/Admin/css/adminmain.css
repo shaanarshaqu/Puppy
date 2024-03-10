@@ -30,3 +30,18 @@
     background-repeat: no-repeat;
 }
 
+.MuiDrawer-paper {
+    background-color: black !important;
+    color: white !important; /* Adjust other style properties as needed */
+  }
+
+  /* .my-icon {
+    color: white !important;
+  } */
+  .css-8je8zh-MuiTouchRipple-root{
+    color: white !important;
+  }
+  .css-i4bv87-MuiSvgIcon-root {
+    /* background-color: white; */
+    color: white !important;
+}

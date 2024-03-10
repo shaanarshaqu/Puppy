@@ -4,66 +4,103 @@ import { newContext } from "../../App";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { MdDeleteForever } from "react-icons/md";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 function Editproduct() {
   const { id } = useParams();
-  let productid = parseInt(id);
-  const { state, setState, adminlogin } = useContext(newContext);
+  const { adminlogin } = useContext(newContext);
   const navigate = useNavigate();
   const [element, setElement] = useState({});
   //set img
   const [selectedImage, setSelectedImage] = useState("");
-  const elementName = useRef();
-  const elementDetail = useRef();
-  const [elementCtg, setElementCtg] = useState("");
-  const [elementType, setElementType] = useState("");
-  const elementAbout = useRef();
-  const elementPrice = useRef();
+  const [updatingImage, setupdatingImage] = useState("");
 
-  useEffect(() => {
-    let dummy = state.find((val) => val.id === productid);
-    setElement(dummy);
-  }, [state]);
+  const itemNameRef = useRef();
+  const itemDetailRef = useRef();
+  const [itemCtg, setitemCtg] = useState("");
+  const [itemType, setitemType] = useState("");
+  const itemAboutRef = useRef();
+  const itemPriceRef = useRef();
 
-  useEffect(() => {
-    // Set default values for radio buttons when the component mounts
-    setElementCtg(element.catagory);
-    setElementType(element.type);
-  }, [element.catagory, element.type]);
+  const Categoryobj = {
+    Dog: 10,
+    Cat: 11,
+    Puppy: 12,
+    Kitten: 13,
+    Birds: 14,
+    Reptiles: 15,
+    Small_Animals: 16,
+    Fish: 17,
+    Accessories: 26,
+  };
 
-  function editstate() {
-      let dummyarray = state.map((val) => {
-        if (val.id === productid) {
-          return {
-            ...val,
-            catagory: elementCtg,
-            type: elementType,
-            img:selectedImage || element.img,
-            name: elementName.current.value,
-            detail: elementDetail.current.value,
-            about: elementAbout.current.value,
-            price: parseInt(elementPrice.current.value),
-          };
+  async function editstate() {
+    const tk = Cookies.get("tk");
+    try {
+      if (
+        itemNameRef.current.value != "" &&
+        itemDetailRef.current.value != "" &&
+        itemType != "" &&
+        Categoryobj[itemCtg] != null &&
+        itemAboutRef.current.value != "" &&
+        itemPriceRef.current.value != ""
+      ) {
+        let formData = new FormData();
+        formData.append("product.Type", itemType);
+        formData.append("product.Name", itemNameRef.current.value);
+        formData.append("product.Detail", itemDetailRef.current.value);
+        formData.append("product.About", itemAboutRef.current.value);
+        formData.append("product.Price", Number(itemPriceRef.current.value));
+        formData.append("product.Category_id", Number(Categoryobj[itemCtg]));
+        if (!updatingImage) {
+          let imageFetch = await fetch(element.img, {
+            headers: {
+              Authorization: `Bearer ${tk}`,
+            },
+          });
+          let blob = await imageFetch.blob();
+          console.log(blob);
+          formData.append("image", blob);
+        } else {
+          formData.append("image", updatingImage);
         }
-        return val;
-      });
-      setState(dummyarray);
-      alert("item updated");
-      navigate("/products");
 
+        await axios.put(
+          `http://localhost:5275/api/Products/Update/${id}`,
+          formData,
+          {
+            headers: {
+              Authorization: `Bearer ${tk}`,
+            },
+          }
+        );
+        alert("success");
+      }
+    } catch (err) {
+      console.log("error");
+    }
   }
 
-  function removeitem() {
-    let itemindex = state.indexOf(element);
-    let dummystate = [...state];
-    dummystate.splice(itemindex, 1);
-    setState(dummystate);
-    navigate("/products");
-  }
+  const fetchProduct = async () => {
+    try {
+      const item = await axios.get(`http://localhost:5275/api/Products/${id}`);
+      setElement(item.data);
+      setitemCtg(item.data.ctg);
+      setitemType(item.data.type);
+    } catch (err) {}
+  };
+
+  useEffect(() => {
+    fetchProduct();
+  }, []);
+
+  function removeitem() {}
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      setupdatingImage(file);
       const reader = new FileReader();
       reader.onloadend = () => {
         setSelectedImage(reader.result);
@@ -76,7 +113,8 @@ function Editproduct() {
     <div
       style={{
         marginTop: "65px",
-        backgroundColor: "lightblue",
+        backgroundColor: "black",
+        color:"white",
         paddingBottom: "20px",
         minHeight: "100vh",
       }}
@@ -120,7 +158,16 @@ function Editproduct() {
                 />
               </div>
               <p>Choose Image</p>
-              <Button variant="danger" onClick={removeitem} style={{borderRadius:"25%",display:"flex",alignItems:"center",padding:"5px 10px" }}>
+              <Button
+                variant="danger"
+                onClick={removeitem}
+                style={{
+                  borderRadius: "25%",
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "5px 10px",
+                }}
+              >
                 <MdDeleteForever style={{ fontSize: "1.6em" }} />
               </Button>
             </div>
@@ -137,54 +184,66 @@ function Editproduct() {
                 Name:
                 <input
                   type="text"
+                  style={{ width: "100%" }}
                   defaultValue={element.name}
-                  ref={elementName}
+                  ref={itemNameRef}
                 />
                 Detail:
                 <input
                   type="text"
+                  style={{ width: "100%" }}
                   defaultValue={element.detail}
-                  ref={elementDetail}
+                  ref={itemDetailRef}
                 />
                 <strong>Ctg:</strong>
-                <span>
-                  <input
-                    type="radio"
-                    name="ctg"
-                    checked={elementCtg === "dog"}
-                    onChange={() => setElementCtg("dog")}
-                  />
-                  Dog&nbsp;
-                  <input
-                    type="radio"
-                    name="ctg"
-                    checked={elementCtg === "cat"}
-                    onChange={() => setElementCtg("cat")}
-                  />
-                  Cat
+                <span className="row">
+                  {[
+                    "Dog",
+                    "Cat",
+                    "Puppy",
+                    "Kitten",
+                    "Birds",
+                    "Reptiles",
+                    "Small_Animals",
+                    "Fish",
+                    "Accessories",
+                  ].map((cg, i) => (
+                    <span className="col-6" key={i}>
+                      <input
+                        type="radio"
+                        name="ctg"
+                        checked={itemCtg === cg}
+                        onChange={() => {
+                          setitemCtg(cg);
+                        }}
+                      />
+                      {cg}&nbsp;
+                    </span>
+                  ))}
                 </span>
                 <strong>Type:</strong>
                 <span>
                   <input
                     type="radio"
                     name="type"
-                    checked={elementType === "food"}
-                    onChange={() => setElementType("food")}
+                    checked={itemType === "food"}
+                    onChange={() => setitemType("food")}
                   />
                   Food&nbsp;
                   <input
                     type="radio"
                     name="type"
-                    checked={elementType === "care"}
-                    onChange={() => setElementType("care")}
+                    checked={itemType === "care"}
+                    onChange={() => setitemType("care")}
                   />
                   Care
                 </span>
                 About item:
                 <input
                   type="text"
+                  style={{ width: "100%" }}
                   defaultValue={element.about}
-                  ref={elementAbout}
+                  ref={itemAboutRef}
                 />
                 <span>
                   <b style={{ marginRight: "10px", fontSize: "20px" }}>₹</b>
@@ -193,7 +252,7 @@ function Editproduct() {
                     style={{ width: "150px" }}
                     min={1}
                     defaultValue={element.price}
-                    ref={elementPrice}
+                    ref={itemPriceRef}
                   />
                 </span>
                 <span className="d-flex" style={{ justifyContent: "center" }}>
