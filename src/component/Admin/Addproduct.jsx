@@ -60,7 +60,7 @@ function Addproduct() {
       const reader = new FileReader();
       setupdatingImage(file);
       reader.onloadend = () => {
-        setSelectedImage(reader.re  sult);
+        setSelectedImage(reader.result);
       };
       reader.readAsDataURL(file);
     }
